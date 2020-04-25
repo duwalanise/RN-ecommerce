@@ -113,7 +113,7 @@ const ClothList = ({}) => {
               />
               <View style={styles.sectionDetails}>
                 <View style={styles.sectionPrice}>
-                  <Text style={styles.sectionTitle}>{datum.price}</Text>
+                  <Text style={styles.sectionPriceText}>{datum.price}</Text>
                   <TouchableOpacity onPress={changeLikeStatus(datum.id)}>
                     <Ionicons
                       name="ios-heart"
@@ -149,6 +149,7 @@ export default ClothList;
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: '#fbf9ed',
+    height: '100%',
   },
   loaderWrapper: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   body: {},
@@ -171,7 +172,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   sectionPriceText: {
-    fontSize: 14,
+    fontSize: 18,
     color: '#333333',
   },
   sectionPrice: {
