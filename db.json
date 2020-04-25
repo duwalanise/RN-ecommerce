@@ -2,44 +2,44 @@
   "clothes": [
     {
       "id": 1,
-      "name": "T-Shirt",
-      "description": "this is the T shirt",
+      "name": "Winter Jacket",
+      "description": "Cool winter jacket",
       "liked": false,
       "price": "$20",
-      "img_url": "https://aws.atomretro.com/xlarge/madcap-england-crawdaddy-knitted-polo-flintstone-9.jpg",
+      "img_url": "https://img1.cfcdn.club/ff/1f/ff8d06922cb3bbfecd90ffbd71d7641f_350x350.jpg",
       "added_to_cart": false
     },
     {
       "id": 2,
-      "name": "T-Shirt",
-      "description": "this is the T shirt",
+      "name": "White Pant",
+      "description": "Best white pant",
       "liked": false,
       "price": "$20",
       "added_to_cart": false,
-      "img_url": "https://aws.atomretro.com/xlarge/madcap-england-crawdaddy-knitted-polo-flintstone-9.jpg"
+      "img_url": "https://images-na.ssl-images-amazon.com/images/I/611uNDtr4BL._SX466_.jpg"
     },
     {
       "id": 3,
-      "name": "T-Shirt",
-      "description": "this is the T shirt",
+      "name": "Sweater",
+      "description": "Brown handmade sweater",
       "liked": false,
       "price": "$20",
       "added_to_cart": false,
-      "img_url": "https://www.dhresource.com/0x0/f2/albu/g9/M00/B3/B8/rBVaVVxFfgGAAMSgAAGMVCnCEXQ200.jpg"
+      "img_url": "https://3.imimg.com/data3/QV/HW/MY-2045089/woolen-sweater-500x500.jpg"
     },
     {
       "id": 4,
-      "name": "T-Shirt",
-      "description": "this is the T shirt",
+      "name": "Hoodie",
+      "description": "Github Hoodie",
       "liked": false,
       "price": "$20",
-      "img_url": "https://aws.atomretro.com/xlarge/madcap-england-crawdaddy-knitted-polo-flintstone-9.jpg",
+      "img_url": "https://cdn.shopify.com/s/files/1/0051/4802/products/Invertocat_2.0_Hoodie_Mock_GithubShop-1_1024x1024.jpg?v=1563301044",
       "added_to_cart": false
     },
     {
       "id": 5,
       "name": "T-Shirt",
-      "description": "this is the T shirt",
+      "description": "grey tshirt",
       "liked": false,
       "price": "$20",
       "added_to_cart": false,
@@ -47,8 +47,8 @@
     },
     {
       "id": 6,
-      "name": "T-Shirt",
-      "description": "this is the T shirt",
+      "name": "Shirt",
+      "description": "Shirt",
       "liked": false,
       "price": "$20",
       "added_to_cart": false,
