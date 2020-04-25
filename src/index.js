@@ -10,7 +10,7 @@ import routes from './constants/routes';
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+export default () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -48,4 +48,4 @@ export default function App() {
       </Tab.Navigator>
     </NavigationContainer>
   );
-}
+};

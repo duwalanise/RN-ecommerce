@@ -1,0 +1,58 @@
+{
+  "clothes": [
+    {
+      "id": 1,
+      "name": "T-Shirt",
+      "description": "this is the T shirt",
+      "liked": false,
+      "price": "$20",
+      "img_url": "https://aws.atomretro.com/xlarge/madcap-england-crawdaddy-knitted-polo-flintstone-9.jpg",
+      "added_to_cart": true
+    },
+    {
+      "id": 2,
+      "name": "T-Shirt",
+      "description": "this is the T shirt",
+      "liked": false,
+      "price": "$20",
+      "added_to_cart": false,
+      "img_url": "https://aws.atomretro.com/xlarge/madcap-england-crawdaddy-knitted-polo-flintstone-9.jpg"
+    },
+    {
+      "id": 3,
+      "name": "T-Shirt",
+      "description": "this is the T shirt",
+      "liked": false,
+      "price": "$20",
+      "added_to_cart": false,
+      "img_url": "https://www.dhresource.com/0x0/f2/albu/g9/M00/B3/B8/rBVaVVxFfgGAAMSgAAGMVCnCEXQ200.jpg"
+    },
+    {
+      "id": 4,
+      "name": "T-Shirt",
+      "description": "this is the T shirt",
+      "liked": false,
+      "price": "$20",
+      "added_to_cart": false,
+      "img_url": "https://aws.atomretro.com/xlarge/madcap-england-crawdaddy-knitted-polo-flintstone-9.jpg"
+    },
+    {
+      "id": 5,
+      "name": "T-Shirt",
+      "description": "this is the T shirt",
+      "liked": false,
+      "price": "$20",
+      "added_to_cart": false,
+      "img_url": "https://aws.atomretro.com/xlarge/madcap-england-crawdaddy-knitted-polo-flintstone-9.jpg"
+    },
+    {
+      "id": 6,
+      "name": "T-Shirt",
+      "description": "this is the T shirt",
+      "liked": false,
+      "price": "$20",
+      "added_to_cart": false,
+      "img_url": "https://www.dhresource.com/0x0/f2/albu/g9/M00/B3/B8/rBVaVVxFfgGAAMSgAAGMVCnCEXQ200.jpg"
+    }
+  ]
+}
