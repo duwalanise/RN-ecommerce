@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useContext } from 'react';
 import {
   View,
   Text,
@@ -9,45 +9,18 @@ import {
   Button,
 } from 'react-native';
 
-import { baseUrl } from '../../constants/constants';
+import { DataContext } from '../..';
 
 const ClothList = ({}) => {
-  const [data, setData] = useState([]);
+  const { data, updateData } = useContext(DataContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetch(
-          `${baseUrl}/clothes?added_to_cart=true`,
-        ).then((res) => res.json());
-        setData(result);
-      } catch (err) {
-      } finally {
-      }
-    };
-    fetchData();
-  }, []);
+  const addedToCart = data.filter((dt) => dt.added_to_cart);
 
-  const removeFromCart = useCallback(
-    (datum) => async () => {
-      try {
-        await fetch(`${baseUrl}/clothes/${datum.id}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ...datum,
-            added_to_cart: !datum.added_to_cart,
-          }),
-        });
-        setData(data.filter((dt) => dt.id !== datum.id));
-      } catch (err) {}
-    },
-    [data],
-  );
+  const removeFromCart = (datum) => () => {
+    updateData(data.filter((dt) => dt.id !== datum.id));
+  };
 
-  if (!data.length) {
+  if (!addedToCart.length) {
     return (
       <View style={styles.emptyCart}>
         <Text>Cart Empty</Text>
@@ -61,7 +34,7 @@ const ClothList = ({}) => {
         style={styles.scrollView}
       >
         <View style={styles.body}>
-          {data.map((datum) => (
+          {addedToCart.map((datum) => (
             <View style={styles.sectionContainer}>
               <Image
                 style={styles.image}

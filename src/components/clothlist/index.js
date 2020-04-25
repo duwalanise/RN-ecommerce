@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useContext, useCallback } from 'react';
 import {
   View,
   Text,
@@ -12,75 +12,38 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { baseUrl } from '../../constants/constants';
+import { DataContext } from '../..';
 
 const ClothList = ({}) => {
-  const [isFetching, setIsFetching] = useState(true);
-  const [error, setError] = useState(undefined);
-  const [data, setData] = useState([]);
+  const { data, error, isFetching, updateData } = useContext(DataContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetch(`${baseUrl}/clothes`).then((res) =>
-          res.json(),
-        );
-        setData(result);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setIsFetching(false);
-      }
-    };
-    fetchData();
-  }, []);
+  const changeLikeStatus = (id) => () => {
+    updateData(
+      data.map((dt) => {
+        if (dt.id === id) {
+          return {
+            ...dt,
+            liked: !dt.liked,
+          };
+        }
+        return dt;
+      }),
+    );
+  };
 
-  const changeLikeStatus = useCallback(
-    (id) => () => {
-      setData(
-        data.map((dt) => {
-          if (dt.id === id) {
-            return {
-              ...dt,
-              liked: !dt.liked,
-            };
-          }
-          return dt;
-        }),
-      );
-    },
-    [data],
-  );
-
-  const addToCart = useCallback(
-    (datum) => async () => {
-      try {
-        await fetch(`${baseUrl}/clothes/${datum.id}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ...datum,
-            added_to_cart: !datum.added_to_cart,
-          }),
-        });
-        setData(
-          data.map((dt) => {
-            if (dt.id === datum.id) {
-              return {
-                ...dt,
-                added_to_cart: !dt.added_to_cart,
-              };
-            }
-            return dt;
-          }),
-        );
-      } catch (err) {
-        setError(err);
-      }
-    },
-    [data],
-  );
+  const addToCart = (datum) => () => {
+    updateData(
+      data.map((dt) => {
+        if (dt.id === datum.id) {
+          return {
+            ...dt,
+            added_to_cart: !dt.added_to_cart,
+          };
+        }
+        return dt;
+      }),
+    );
+  };
 
   if (isFetching) {
     return (
